@@ -1,0 +1,21 @@
+{
+	"disabled_build_options": {
+		"disable_3d": true,
+		"disable_3d_physics": true,
+		"openxr": false
+	},
+	"disabled_classes": [
+		"NavigationAgent3D",
+		"NavigationObstacle3D",
+		"Node3D",
+		"Shape3D",
+		"SkeletonIK3D",
+		"SkeletonModification3D",
+		"SkeletonModificationStack3D",
+		"Sky",
+		"StyleBox",
+		"Texture3D",
+		"World3D"
+	],
+	"type": "build_profile"
+}
