@@ -9,8 +9,9 @@ extends CanvasGroup
 @onready var body_sprite: Sprite2D = $BODY
 @onready var arm_sprite: Sprite2D = $ARM
 
-@export var head_turning_amount: float = 30
-@export var arm_turning_amount: float = 90.0
+@export var head_turning_amount: float = 15.0
+@export var arm_turning_amount: float = 55.0
+@export var arm_distance_amount: float = 40.0
 
 func _ready() -> void:
 	if head != null:
@@ -37,6 +38,8 @@ func _process(_delta: float) -> void:
 	
 	arm_sprite.look_at(mouse_position)
 	arm_sprite.rotation = deg_to_rad(clamp(rad_to_deg(arm_sprite.rotation), -arm_turning_amount, arm_turning_amount))
+	
+	arm_sprite.offset.x = arm_distance_amount
 	
 
 

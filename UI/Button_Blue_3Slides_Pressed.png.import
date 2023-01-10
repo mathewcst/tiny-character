@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfuqsfcp1evtu"
-path="res://.godot/imported/arm.png-43484c86ee181f0fabb6e19314961772.ctex"
+uid="uid://m08xqohwmyvq"
+path="res://.godot/imported/Button_Blue_3Slides_Pressed.png-91dab67aff3a2c9d7825c5a5afb1ae59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arm.png"
-dest_files=["res://.godot/imported/arm.png-43484c86ee181f0fabb6e19314961772.ctex"]
+source_file="res://UI/Button_Blue_3Slides_Pressed.png"
+dest_files=["res://.godot/imported/Button_Blue_3Slides_Pressed.png-91dab67aff3a2c9d7825c5a5afb1ae59.ctex"]
 
 [params]
 

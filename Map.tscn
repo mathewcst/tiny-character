@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://rmaooculr34k"]
+[gd_scene load_steps=12 format=3 uid="uid://d2h4a1qu5optu"]
 
 [ext_resource type="Script" path="res://Map.gd" id="1_623w3"]
 [ext_resource type="Texture2D" uid="uid://chxho4xuabwws" path="res://BG_blue.png" id="1_cguo2"]
-[ext_resource type="Script" path="res://GUI.gd" id="1_tfsqn"]
-[ext_resource type="Texture2D" uid="uid://7lldfx8bkchi" path="res://body.png" id="2_v1nhw"]
-[ext_resource type="PackedScene" uid="uid://cpkvv7b486y7i" path="res://Character.tscn" id="2_vrurv"]
-[ext_resource type="Texture2D" uid="uid://dmhn8rdnp8jv8" path="res://Banner_Connection_Up.png" id="3_hcneb"]
-[ext_resource type="Texture2D" uid="uid://doruuykfc7f5c" path="res://head.png" id="3_omnn0"]
-[ext_resource type="Texture2D" uid="uid://cfuqsfcp1evtu" path="res://arm.png" id="4_0lbn4"]
-[ext_resource type="Theme" uid="uid://dnconj8wq31oh" path="res://Theme.tres" id="4_ub2nh"]
+[ext_resource type="Script" path="res://Scripts/GUI.gd" id="2_4yqy2"]
+[ext_resource type="Texture2D" uid="uid://7lldfx8bkchi" path="res://Character/body.png" id="2_v1nhw"]
+[ext_resource type="PackedScene" uid="uid://bra33vlyt3ayb" path="res://Character/Character.tscn" id="2_vrurv"]
+[ext_resource type="Texture2D" uid="uid://dmhn8rdnp8jv8" path="res://UI/Banner_Connection_Up.png" id="3_fbre1"]
+[ext_resource type="Texture2D" uid="uid://doruuykfc7f5c" path="res://Character/head.png" id="3_omnn0"]
+[ext_resource type="Texture2D" uid="uid://cfuqsfcp1evtu" path="res://Character/arm.png" id="4_0lbn4"]
+[ext_resource type="Theme" path="res://Theme.tres" id="4_ub2nh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txrbw"]
 texture = ExtResource("1_cguo2")
@@ -23,7 +23,7 @@ sources/2 = SubResource("TileSetAtlasSource_txrbw")
 script = ExtResource("1_623w3")
 
 [node name="GUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("character")]
-script = ExtResource("1_tfsqn")
+script = ExtResource("2_4yqy2")
 character = NodePath("../Character")
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI"]
@@ -35,7 +35,8 @@ scale = Vector2(0.8, 0.8)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="GUI/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
-texture = ExtResource("3_hcneb")
+layout_mode = 2
+texture = ExtResource("3_fbre1")
 patch_margin_left = 64
 patch_margin_top = 64
 patch_margin_right = 64
@@ -44,6 +45,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer/NinePatchRect"]
+layout_mode = 0
 offset_left = 62.5
 offset_top = 48.75
 offset_right = 313.5
@@ -51,6 +53,7 @@ offset_bottom = 351.75
 scale = Vector2(0.8, 0.8)
 
 [node name="HeadLabel" type="Label" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("4_ub2nh")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -60,6 +63,7 @@ theme_override_font_sizes/font_size = 26
 text = "Head Rotation (90°)"
 
 [node name="HeadProgress" type="HSlider" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("4_ub2nh")
 max_value = 180.0
 step = 5.0
@@ -70,10 +74,12 @@ tick_count = 18
 ticks_on_borders = true
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="ArmLabel" type="Label" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("4_ub2nh")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -83,6 +89,7 @@ theme_override_font_sizes/font_size = 26
 text = "Arm Rotation (90°)"
 
 [node name="ArmProgress" type="HSlider" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("4_ub2nh")
 max_value = 180.0
 step = 5.0
@@ -90,6 +97,22 @@ rounded = true
 allow_greater = true
 allow_lesser = true
 tick_count = 18
+ticks_on_borders = true
+
+[node name="ArmDistanceLabel" type="Label" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ub2nh")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 26
+text = "Arm Distance"
+
+[node name="ArmDistance" type="HSlider" parent="GUI/MarginContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+rounded = true
+tick_count = 10
 ticks_on_borders = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -107,3 +130,4 @@ arm = ExtResource("4_0lbn4")
 
 [connection signal="value_changed" from="GUI/MarginContainer/NinePatchRect/VBoxContainer/HeadProgress" to="GUI" method="_on_head_progress_value_changed"]
 [connection signal="value_changed" from="GUI/MarginContainer/NinePatchRect/VBoxContainer/ArmProgress" to="GUI" method="_on_arm_progress_value_changed"]
+[connection signal="value_changed" from="GUI/MarginContainer/NinePatchRect/VBoxContainer/ArmDistance" to="GUI" method="_on_arm_distance_value_changed"]

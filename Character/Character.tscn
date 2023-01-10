@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bra33vlyt3ayb"]
+
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_xkloq"]
+[ext_resource type="Texture2D" uid="uid://7lldfx8bkchi" path="res://Character/body.png" id="2_2co7u"]
+[ext_resource type="Texture2D" uid="uid://doruuykfc7f5c" path="res://Character/head.png" id="3_m06o5"]
+[ext_resource type="Texture2D" uid="uid://cfuqsfcp1evtu" path="res://Character/arm.png" id="4_01x4i"]
+
+[node name="Character" type="CanvasGroup"]
+script = ExtResource("1_xkloq")
+
+[node name="BODY" type="Sprite2D" parent="."]
+texture = ExtResource("2_2co7u")
+offset = Vector2(0, 20)
+
+[node name="HEAD" type="Sprite2D" parent="."]
+position = Vector2(-4, 16)
+texture = ExtResource("3_m06o5")
+offset = Vector2(0, -32)
+
+[node name="ARM" type="Sprite2D" parent="."]
+position = Vector2(19, 15)
+texture = ExtResource("4_01x4i")
+offset = Vector2(25.698, 0)

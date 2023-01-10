@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2p4ap3d07djg"
-path="res://.godot/imported/Button_Blue_3Slides.png-67e7ca3782d09dcb2d58ce177fda9b73.ctex"
+uid="uid://bk8m443glier2"
+path="res://.godot/imported/Banner_Horizontal.png-d01127e0405006ab308914eaae928bfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button_Blue_3Slides.png"
-dest_files=["res://.godot/imported/Button_Blue_3Slides.png-67e7ca3782d09dcb2d58ce177fda9b73.ctex"]
+source_file="res://UI/Banner_Horizontal.png"
+dest_files=["res://.godot/imported/Banner_Horizontal.png-d01127e0405006ab308914eaae928bfa.ctex"]
 
 [params]
 
